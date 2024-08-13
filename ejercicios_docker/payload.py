@@ -4,16 +4,17 @@ import datetime
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = 'tu_clave_secreta'
+app.config['SECRET_KEY'] = '123456'
 
 @app.route('/convertir', methods=['POST'])
 def convertir_a_jwt():
+
     payload = request.json
 
     token = jwt.encode(
         {
             **payload,
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=1)
+            'exp': datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=1)
         },
         app.config['SECRET_KEY'],
         algorithm='HS256'
