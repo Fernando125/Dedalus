@@ -1,7 +1,3 @@
-# Escribe un script con una funcion que determine si un argumento
-# que se le pasa es un entero o una cadena. La función devolverá
-# TRUE (0) si se le pasa un entero, y FALSE (1) si se le pasa una cadena.
-
 #!/bin/bash
 
 entero_cadena() {
