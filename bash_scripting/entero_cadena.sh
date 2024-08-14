@@ -6,7 +6,7 @@ entero_cadena() {
         exit
     elif [[ $1 =~ ^-?[0-9]+$ ]]; then
         return 0
-    elif [[ $1 =~ ^[a-zA-Z]+$ ]]; then
+    elif [[ $1 =~ ^[a-zA-Z0-9@#$%*+\-=]+$ ]]; then
         return 1
     else
         echo "El argumento no es un entero ni una cadena"
