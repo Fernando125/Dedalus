@@ -6,5 +6,6 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - .:/app
+      - ./payload.json:/app/payload.json
+      - ./payload.py:/app/payload.py
     command: python payload.py
