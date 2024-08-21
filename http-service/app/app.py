@@ -4,12 +4,10 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST', 'PUT', 'DELETE'])
 def handle_request():
-    # Imprime los encabezados
     print("Headers:")
     for header, value in request.headers.items():
         print(f"{header}: {value}")
     
-    # Imprime el cuerpo de la solicitud
     print("\nBody:")
     print(request.data.decode('utf-8'))
 
