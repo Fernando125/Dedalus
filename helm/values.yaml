@@ -1,0 +1,14 @@
+controller:
+  replicaCount: 5
+metrics:
+  jmx:
+    enabled: true
+provisioning:
+  enabled: true
+  replicationFactor: 5
+topics:
+  - name: primer-topic
+    partitions: 10
+    replicationFactor: 5
+    config:
+      max.message.bytes: 32000
