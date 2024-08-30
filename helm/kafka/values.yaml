@@ -34,9 +34,10 @@ metrics:
       repository: bitnami/jmx-exporter
       tag: 0.20.0-debian-12-r11
 
-topics:
-  - name: primer-topic
-    partitions: 10
-    replicationFactor: 5
-    config:
-      max.message.bytes: 32000
+provisioning:
+  topics:
+    - name: primer-topic
+      partitions: 10
+      replicationFactor: 5
+      config:
+        max.message.bytes: 32000
