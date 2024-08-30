@@ -10,6 +10,12 @@ image:
   pullPolicy: IfNotPresent
   debug: false
 
+listeners:
+  client:
+    protocol: "PLAINTEXT"
+  controller:
+    protocol: "PLAINTEXT"
+
 controller:
   replicaCount: 5
   podManagementPolicy: Parallel
