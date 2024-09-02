@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tomcat-configmap
+data:
+  catalina.sh: |
+    #!/bin/bash
+    echo "Iniciando Tomcat"
