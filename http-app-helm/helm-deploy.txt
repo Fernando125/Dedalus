@@ -1,0 +1,5 @@
+// Este es el comando para desplegar el ingress-controller.yaml
+
+helm upgrade --install ingress-nginx ingress-nginx \
+ --repo https://kubernetes.github.io/ingress-nginx \
+ --namespace ingress-nginx --create-namespace -f values.yaml
