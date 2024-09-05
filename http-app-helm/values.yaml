@@ -1,6 +1,7 @@
 replicaCount: 2
 
 image:
+  registry: docker.io
   repository: fernandogg99/http-app
   tag: latest
   pullPolicy: IfNotPresent
@@ -10,11 +11,25 @@ service:
   port: 8080
 
 ingress:
-  enabled: true
+  enabled: false
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
   hosts:
-    - host: http-app.local
+    - host: example.com
       paths:
         - /
   tls: []
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
