@@ -13,10 +13,17 @@ spec:
     metadata:
       labels:
         app: {{ .Chart.Name }}
+      annotations: {{ .Values.podAnnotations | toYaml | nindent 8 }}
     spec:
+      securityContext: {{ .Values.podSecurityContext | toYaml | nindent 6 }}
+      nodeSelector: {{ .Values.nodeSelector | toYaml | nindent 6 }}
+      tolerations: {{ .Values.tolerations | toYaml | nindent 6 }}
+      affinity: {{ .Values.affinity | toYaml | nindent 6 }}
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
         - containerPort: {{ .Values.service.port }}
+        resources: {{ .Values.resources | toYaml | nindent 10 }}
+        securityContext: {{ .Values.securityContext | toYaml | nindent 10 }}

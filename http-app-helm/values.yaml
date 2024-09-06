@@ -19,17 +19,3 @@ ingress:
       paths:
         - /
   tls: []
-
-resources: {}
-
-nodeSelector: {}
-
-tolerations: []
-
-affinity: {}
-
-podAnnotations: {}
-
-podSecurityContext: {}
-
-securityContext: {}
